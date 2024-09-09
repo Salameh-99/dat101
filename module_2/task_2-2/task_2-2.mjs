@@ -3,7 +3,8 @@ import { initPrintOut, printOut, newLine } from "../../common/script/utils.mjs";
 initPrintOut(document.getElementById("txtOut"));
 
 printOut("--- Part 1 ----------------------------------------------------------------------------------------------");
-/* Put your code below here!*/
+calculate  2+3*2-4*6 = -34
+
 printOut("Replace this with you answer!");
 printOut(newLine);
 
