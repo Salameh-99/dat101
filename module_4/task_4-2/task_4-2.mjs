@@ -21,7 +21,7 @@ printOut(newLine);
 
 printOut("--- Part 3 ----------------------------------------------------------------------------------------------");
 /* Put your code below here!*/
-const hiThere = "Hello there, how are you?";
+const hiThere = "Hei på deg, hvordan har du det?";
 let array = [];
 array = hiThere.split(" ");
 
@@ -32,125 +32,77 @@ printOut(newLine);
 
 printOut("--- Part 4 ----------------------------------------------------------------------------------------------");
 /* Put your code below here!*/
-let names = ["Anne", "Inger", "Kari", "Marit", "Ingrid", "Liv", "Eva", "Berit", "Astrid",
-  "Bjørg", "Hilde", "Anna", "Solveig", "Marianne", "Randi", "Ida", "Nina", "Maria", "Elisabeth", "Kristin"];
-  
-  function removeElement(array, element) {
-      console.log(`Element to remove: "${element}"`);
-  
-      // Finn indeksen til elementet
-      const index = array.indexOf(element);
-  
-      // Hvis elementet finnes i arrayet
-      if (index !== -1) {
-          const removedElement = array.splice(index, 1); // Fjern elementet
-          printOut(`Array length is: ${array.length}`);
-          printOut(`The word: "${removedElement[0]}", at index ${index} was removed from the array. New array length is: ${array.length}`);
-          return { removedElement: removedElement[0], index, array };
-      } else {
-          printOut(`The element: "${element}" does not exist in the array.`);
-          return null; // Returner null hvis elementet ikke finnes
-      }
+const girls = ["Anne", "Inger", "Kari", "Marit", "Ingrid", "Liv", "Eva", "Berit", "Astrid", "Bjørg", "Hilde", "Anna", "Solveig", "Marianne", "Randi", "Ida", "Nina", "Maria", "Elisabeth", "Kristin"];
+
+function removeFromArray(aArray, aItem){
+  const result = aArray.indexOf(aItem);
+  if(result > -1){
+    printOut("Can remove " + " " + aItem + " from array");
+    aArray.splice(result, 1);
+  }else{
+    printOut("Can not remove " + " " + aItem + " from array");
   }
-  
-  // Interaktiv input fra brukeren
-  const elementToRemove = prompt("What element do you want to remove?");
-  const result = removeElement(names, elementToRemove);
-  
-  // Skriv ut resultatet
-  if (result) {
-      console.log(`Updated array: ${names.join(", ")}`);
-  } else {
-      console.log("No changes were made to the array.");
+}
+
+function findAndRemoveFromArray(aArray, aItem){
+  let index = -1;
+  const result = aArray.find(findName);
+  if(result){
+    printOut("Can remove " + " " + aItem + " from array");
+    aArray.splice(index, 1);
+  }else{
+    printOut("Can not remove " + " " + aItem + " from array");
   }
-  
+
+  function findName(aName, aIndex){
+    index = aIndex;
+    return aName === aItem;
+  }
+}
+
+removeFromArray(girls, "Arne");
+findAndRemoveFromArray(girls, "Ingrid");
+printOut(girls.join(", "));
+
+printOut(newLine);
 printOut("--- Part 5 ----------------------------------------------------------------------------------------------");
 /* Put your code below here!*/
-let namesBoys = ["Jakob", "Lucas", "Emil", "Oskar", "Oliver", "William", "Filip", "Noah",
-"Elias", "Isak", "Henrik", "Aksel", "Kasper", "Mathias", "Jonas", "Tobias", "Liam", "Håkon", "Theodor", "Magnus"];
-let namesMerged = names.concat(namesBoys);
+const boys = ["Jakob", "Lucas", "Emil", "Oskar", "Oliver", "William", "Filip", "Noah", "Elias", "Isak", "Henrik", "Aksel", "Kasper", "Mathias", "Jonas", "Tobias", "Liam", "Håkon", "Theodor", "Magnus"];
+//const names = [...girls, ...boys];
+const names = girls.concat(boys);
+names.forEach(printName);
+function printName(aName){
+  printOut(aName);
+}
 
-printOut(`${namesMerged.join(" , ")}`);
 printOut(newLine);
 
 printOut("--- Part 6 ----------------------------------------------------------------------------------------------");
 /* Put your code below here!*/
-class TBook {
-    #title
-    #author
-    #isbn
+class TBook{
+  #Tile;
+  #Author;
+  #ISBN;
+  constructor(aTile, aAuthor, aISBN){
+    this.#Tile = aTile;
+    this.#Author = aAuthor;
+    this.#ISBN = aISBN;
+  }
 
-    constructor(aTitle, aAuthor, aIsbn){
-        this.#title = aTitle;
-        this.#author = aAuthor;
-        this.#isbn = aIsbn;
-    }
-
-    setBook(aTitle) {
-
-        switch (aTitle){
-            
-            case "Harry Potter": {
-                this.#title = "Harry Potter";
-                this.#author = "J. K. Rowling";
-                this.#isbn = "9780545069670"; //9780545069670
-                let book = this.#title;
-                let author = this.#author
-                let isbn = this.#isbn
-                return this.toString(this.#title, this.#author, this.#isbn);
-            }
-            case "Shogun": {
-                this.#title = "Shogun";
-                this.#author = "James Clavell";
-                this.#isbn = "9780340203163";//9780340203163
-                let book2 = this.#title;
-                let author2 = this.#author
-                let isbn2 = this.#isbn
-                return this.toString(this.#title, this.#author, this.#isbn);
-            }
-            case "Looking Forward": {
-                this.#title = "Looking Forward";
-                this.#author = "Marcia Willett";
-                this.#isbn = "9780755385164";//9780755385164
-                let book3 = this.#title;
-                let author3 = this.#author;
-                let isbn3 = this.#isbn;
-                return this.toString(this.#title, this.#author, this.#isbn);
-            }
-            default: {
-                console.log(`This book is not in the bookshelf. Please try another book.`);
-                break
-            }
-        }
-    }
-
-    toString() {
-
-        switch (this.#title){
-            case "Harry Potter": {
-                printOut(`${this.#title}, Author: ${this.#author}, ISBN: ${this.#isbn}`);
-                return (`${this.#title}, Author: ${this.#author}, ISBN: ${this.#isbn}`);
-            }
-            case "Shogun": {
-                printOut(`${this.#title}, Author: ${this.#author}, ISBN: ${this.#isbn}`);
-                return (`${this.#title}, Author: ${this.#author}, ISBN: ${this.#isbn}`);
-            }
-            case "Looking Forward": {
-                printOut(`${this.#title}, Author: ${this.#author}, ISBN: ${this.#isbn}`);
-                return (`${this.#title}, Author: ${this.#author}, ISBN: ${this.#isbn}`);
-            }
-            default: {
-                return (`This book is not in the bookshelf. Please try another book.`);
-            }
-        }
-    }
+  toString(){
+    return this.#Tile + ", " + this.#Author + ", " + this.#ISBN;
+  }
 }
+//Create an array that contains three instances of the TBook class from different authors.
+const books = [
+  new TBook("Harry Potter", "J.K.R", "978-0-395-07122-1"),
+  new TBook("And Then There Were None", "Agatha Christie", "978-0-385-12167-5"),
+  new TBook("A Tale of Two Cities", "Charles Dickens", "978-0-385-50420-5")
+];
 
-const classTBook = ["Harry Potter", "Shogun", "Looking Forward"];
-const bookshelf = new TBook();
-for (let i = 0; i < classTBook.length; i++){
-    console.log(i);
-    console.log(bookshelf.setBook(classTBook[i]));
+books.forEach(printBook);
+function printBook(aBook){
+  printOut(aBook.toString());
 }
 
 printOut(newLine);
