@@ -10,8 +10,48 @@
       <span id="txtOut" style="white-space: nowrap"></span>
     </div>
     <ol>
-      <li>[Write the question here, and copy this for more questions]</li>
-      <p>[Write your answer here, and copy this for more answers]</p>
+      <li>Hva er et array?</li>
+      <p>Et array er en datastruktur som lagrer en samling elementer (verdier), vanligvis av samme type, i en bestemt rekkefølge. Hvert element kan nås ved hjelp av sin indeks.</p>
+
+      <li>Hva betyr "hardcoding" i programmering?</li>
+      <p>Hardcoding betyr å legge faste verdier direkte inn i koden i stedet for å bruke variabler, konstanter eller eksterne kilder. Dette gjør koden mindre fleksibel og vanskeligere å vedlikeholde.
+      </p>
+
+      <li> Forklar oppgave 3 og hvordan vi kan iterere når vi ikke kjenner lengden på arrayet.</li>
+      <p>I oppgave 3 sjekker vi hvilke av checkboxene som er valgt og skriver ut resultatet. For å iterere over et array med ukjent lengde kan vi bruke en løkke som for
+        I javascript (for (let i = 0; i < array.length; i++) { // Tilgang til elementene med array[i] }
+       
+       </p>
+
+      <li> Hvorfor lagre instanser av klasser i arrays (som i oppgave 4)?</li>
+      <p>Å lagre klasseinstanser i arrays gjør det enklere å håndtere flere objekter av samme type. Arrays gir en systematisk måte å iterere, filtrere og manipulere objektene på, noe som gjør programmet mer organisert og enklere å skalere.
+      </p>
+
+      <li> Forklar EWeekDays-objektet fra oppgave 7.</li>
+      <p>EWeekDays-objektet kartlegger ukedager til spesifikke verdier eller kategorier.
+        * Bruk av value: Attributtet value brukes for å identifisere eller skille dager programmatisk .
+        * Forskjell på kategoriene:
+            * "WeekDay": Kan referere til alle ukedager.
+            * "Workdays": Dager som vanligvis regnes som arbeidsdager (f.eks. mandag–fredag).
+            * "Weekends": Dager som vanligvis regnes som helg (f.eks. lørdag, søndag).
+        </p>
+
+      <li> Callback-rutine i sortering (oppgave 8).</li>
+      <p>En callback-rutine er en funksjon som sendes som argument til en annen funksjon. Ved sortering brukes callbacken til å definere hvordan to elementer sammenlignes. For eksempel:
+        javascript
+        array.sort((a, b) => a - b);</p>
+
+      <li> Forklaring av sorteringsrutiner.</li>
+      <p>Sorteringsrutiner sammenligner to elementer av gangen for å avgjøre rekkefølgen. Callbacken returnerer:
+        * En negativ verdi hvis det første elementet skal komme før det andre.
+        * Null hvis rekkefølgen ikke skal endres.
+        * En positiv verdi hvis det første elementet skal komme etter det andre.
+        </p>
+
+      <li> Array med rader og kolonner (oppgave 10).</li>
+      <p>(array med rader og kolonner) inneholder det første elementet en annen array som representerer den første raden.
+      </p>
+
     </ol>
     <script type="module" src="./task_4-2.mjs" defer></script>
   </body>
